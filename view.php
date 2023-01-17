@@ -51,10 +51,10 @@
             echo "<option value='" . $currentRow . "'>" . $currentRow + 1 . "</option>";
         }
         echo "</select>";
-        
+
         //Select column
         echo "Column ";
-        echo "<select name='collumn' id='collumn' >";
+        echo "<select name='column' id='column' >";
         for ($currentColumn = 0; $currentColumn < $column; $currentColumn++) {
             echo "<option value='" . $currentColumn . "'>" . $currentColumn + 1 . "</option>";
         }
@@ -69,12 +69,22 @@
         echo "The winner is " . $winner;
     }
 
+
+    session_start();
+    $table = $_SESSION['table'];
+    print_r($table);
+
     
 
 
 
 
     ?>
+
+    <form action='controller.php' method='post'>
+        <input type="hidden" name="true">
+    <input type='submit' " value='Clear table(still not work)'>
+    </form>
 
 </body>
 

@@ -1,16 +1,40 @@
 <?php
 
-echo "I'm the controller";
+include("game.php");
 
-echo "<br>";
-echo "<br>";
+//echo "I'm the controller";
 
-$row= $_POST["row"];
+/*echo "<br>";
+echo "<br>";
+$row= $_POST["row";
 echo $row;
-
-echo " and the collumn ";
-
-$collumn= $_POST["collumn"];
+echo " and the column ";
+$column= $_POST["column"];
 echo $collumn;
+*/
+
+
+
+
+
+$game = Game::getInstance();
+$row = $_POST["row"];
+$column = $_POST["column"];
+$game->setBlock($row, $column, "X");
+
+/*if ($_POST["refresh"] == "true") {
+    //$game->clearTable();
+
+}
+*/
+
+session_start();
+$_SESSION['table'] = $game->getTable();
+header("Location: view.php");
+
+
+
+
+
 
 ?>
