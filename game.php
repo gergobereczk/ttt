@@ -2,7 +2,7 @@
 
 class Game
 {
-//delete this comment please
+
 
     private $table = array(
         array("", "", ""),
