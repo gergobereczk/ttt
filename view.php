@@ -74,7 +74,7 @@
     $table = $_SESSION['table'];
     print_r($table);
 
-    
+
 
 
 

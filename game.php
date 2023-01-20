@@ -2,17 +2,18 @@
 
 class Game
 {
-    
-    public $clearNum =0;
+
+
     private $table = array(
         array("", "", ""),
         array("", "", ""),
         array("", "", "")
     );
 
-    function __construct(){
+    function __construct()
+    {
         $this->clearTable();
-        
+
     }
     private static $instance = null;
 
@@ -20,14 +21,14 @@ class Game
     {
         if (self::$instance == null) {
             self::$instance = new Game();
-            
+
         }
 
         return self::$instance;
     }
     public $currentPlayer = "";
 
-  
+
     public function clearTable()
     {
         for ($currentRow = 0; $currentRow < count($this->table); $currentRow++) {
