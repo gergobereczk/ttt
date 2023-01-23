@@ -37,7 +37,10 @@ class Game
             }
         }
     }
-
+    public function addTable($table)
+    {
+        $this->table = $table;
+    }
     public function getTable()
     {
         return $this->table;

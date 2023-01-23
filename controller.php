@@ -16,19 +16,27 @@ echo $collumn;
 
 
 
-
+session_start();
 $game = Game::getInstance();
+$table = $_SESSION['table'];
+if (is_null($table)) {
+    null;
+} else {
+    $game->addTable($table);
+}
+
 $row = $_POST["row"];
 $column = $_POST["column"];
 $game->setBlock($row, $column, "X");
 
-/*if ($_POST["refresh"] == "true") {
-    //$game->clearTable();
-
+$isRefresh = $_POST["refresh"];
+if ($isRefresh === "true") {
+$game->clearTable();
 }
-*/
 
-session_start();
+
+
+//$tableFromFrontend = $_SESSION['table'];
 $_SESSION['table'] = $game->getTable();
 header("Location: view.php");
 

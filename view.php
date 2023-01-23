@@ -8,7 +8,7 @@
 
     <?php
     //draw the table
-    function drawTable()
+    function drawTable($table)
     {
         $row = 3;
         $column = 3;
@@ -19,7 +19,7 @@
             echo "<tr>";
             for ($currentColumn = 0; $currentColumn < $column; $currentColumn++) {
                 echo "<td>";
-                echo "E";
+                echo $table[$currentRow][$currentColumn];
                 echo "</td>";
             }
             echo "</tr>";
@@ -30,8 +30,9 @@
 
 
     }
-
-    drawTable();
+    session_start();
+    $table = $_SESSION['table'];
+    drawTable($table);
 
     //controll and display
     $winner = "inGame";
@@ -70,19 +71,14 @@
     }
 
 
-    session_start();
-    $table = $_SESSION['table'];
-    print_r($table);
 
 
-
-
-
+    //print_r($table);
 
     ?>
 
     <form action='controller.php' method='post'>
-        <input type="hidden" name="true">
+        <input type="hidden" value="true" name="refresh">
     <input type='submit' " value='Clear table(still not work)'>
     </form>
 
