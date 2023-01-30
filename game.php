@@ -1,14 +1,16 @@
 <?php
 
-class Game
-{
+
+class Game {
 
 
-    private $table = array(
+    public $table = array(
         array("", "", ""),
         array("", "", ""),
         array("", "", "")
     );
+    
+ 
 
     function __construct()
     {
@@ -65,6 +67,7 @@ class Game
     }
 
 }
+
 
 
 

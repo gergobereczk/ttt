@@ -1,6 +1,6 @@
 <?php
 
-include("game.php");
+include('game.php');
 
 //echo "I'm the controller";
 
@@ -31,8 +31,9 @@ $game->setBlock($row, $column, "X");
 
 $isRefresh = $_POST["refresh"];
 if ($isRefresh === "true") {
-$game->clearTable();
+    $game->clearTable();
 }
+
 
 
 

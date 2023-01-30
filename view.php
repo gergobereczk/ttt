@@ -32,6 +32,8 @@
     }
     session_start();
     $table = $_SESSION['table'];
+    
+    $_SERVER['tablefromwiev'] = $table;
     drawTable($table);
 
     //controll and display
@@ -79,7 +81,7 @@
 
     <form action='controller.php' method='post'>
         <input type="hidden" value="true" name="refresh">
-    <input type='submit' " value='Clear table(still not work)'>
+    <input type='submit' " value='Clear table'>
     </form>
 
 </body>
