@@ -6,7 +6,10 @@
 
     <h1>View</h1>
 
+
+
     <?php
+    session_start();
     //draw the table
     function drawTable($table)
     {
@@ -30,10 +33,10 @@
 
 
     }
-    session_start();
-    $table = $_SESSION['table'];
+
+
     
-    $_SERVER['tablefromwiev'] = $table;
+    $table = $_SESSION['table'];
     drawTable($table);
 
     //controll and display
@@ -71,13 +74,11 @@
         echo "<br>";
         echo "The winner is " . $winner;
     }
-
-
-
-
-    //print_r($table);
-
     ?>
+
+
+
+
 
     <form action='controller.php' method='post'>
         <input type="hidden" value="true" name="refresh">
